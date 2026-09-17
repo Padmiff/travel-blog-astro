@@ -1,0 +1,66 @@
+---
+import "../styles/global.css";
+import { Icon } from "astro-icon/components";
+---
+
+<footer class="bg-gray-200 h-auto mt-15">
+    <div class="flex flex-row justify-evenly gap-20 p-15">
+        <div class="w-96">
+            <h2 class="text-[27px] font-bold">Sobre Nosotros</h2>
+            <div class="w-full border-b border-gray-500"></div>
+            <p class="text-xl font-medium mt-6">Informacion sobre el blog</p>
+        </div>
+        <div class="w-96">
+            <h2 class="text-[27px] font-bold">Enlace Útiles</h2>
+            <div class="w-full border-b border-gray-500"></div>
+            <ul>
+                <li class="text-xl font-medium mt-6">
+                    <a
+                        class="border-b border-gray-500 transition-colors hover:border-blue-600 hover:text-blue-600"
+                        href="/privacidad">Privacidad</a
+                    >
+                </li>
+                <li class="text-xl font-medium mt-6">
+                    <a
+                        class="border-b border-gray-500 transition-colors hover:border-blue-600 hover:text-blue-600"
+                        href="/terminos">Terminos</a
+                    >
+                </li>
+            </ul>
+        </div>
+        <div class="w-96">
+            <h2 class="text-[27px] font-bold">Síguenos</h2>
+            <div class="w-full border-b border-gray-500"></div>
+            <ul class="flex flex-row gap-4 text-5xl mt-6">
+                <li
+                    class="hover:text-gray-600 transition duration-200 ease-out hover:scale-110"
+                >
+                    <a href="/instagram"><Icon name="mdi:instagram" /></a>
+                </li>
+                <li
+                    class="hover:text-gray-600 transition duration-200 ease-out hover:scale-110"
+                >
+                    <a href="/facebook"><Icon name="mdi:facebook" /></a>
+                </li>
+                <li
+                    class="hover:text-gray-600 transition duration-200 ease-out hover:scale-110"
+                >
+                    <a href="/X"><Icon name="mdi:alpha-x-box-outline" /></a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="relative">
+        <div
+            class="bg-gray-600 h-30 w-full absolute -bottom-16 [clip-path:polygon(0%_0%,0%_100%,50%_50%,100%_0%,100%_100%)]"
+        >
+        </div>
+    </div>
+    <div
+        class="bg-gray-800 h-40 [clip-path:polygon(50%_2%,0%_40%,0%_100%,100%_100%,100%_40%)]"
+    >
+        <p class="text-lg text-white font-medium text-center p-15">
+            © 2026 Explora el mundo. Todos los derechos reservados.
+        </p>
+    </div>
+</footer>
