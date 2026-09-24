@@ -15,14 +15,14 @@ import { ULTIMOS_ARTICULOS, TITULO_ARTICULOS } from "../data.ts";
                 <article class="flex flex-col border border-gray-300 shadow-lg">
                     <img
                         src={articulos.imagen.src}
-                        class="w-96 h-70 object-cover"
+                        class="w-full lg:h-70 md:h-60 object-cover"
                         alt=""
                     />
                     <div class="p-6">
-                        <h3 class="text-blue-700 text-2xl font-semibold mb-6">
+                        <h3 class="text-blue-700 text-xl md:text-2xl font-semibold mb-6">
                             {articulos.titulo}
                         </h3>
-                        <p class="text-xl font-medium mb-3">
+                        <p class="text-lg md:text-xl font-medium mb-3">
                             {articulos.descripcion}
                         </p>
                     </div>
