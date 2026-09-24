@@ -10,10 +10,10 @@ import "../styles/global.css";
         {TITULO_DESTINOS}
     </h2>
 
-    <div class="mx-8 md:mx-20 flex flex-col md:flex-row justify-between gap-5">
+    <div class="mx-8 md:mx-20 flex flex-col md:flex-row gap-5">
         {
             DESTINOS_POPULARES.map((destinos) => (
-                <article class="flex flex-col border border-gray-300 shadow-lg">
+                <article class="flex flex-col border border-gray-300 shadow-lg md:flex-1">
                     <img
                         src={destinos.imagen.src}
                         class="w-full lg:h-70 md:h-60 object-cover"
