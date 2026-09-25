@@ -14,6 +14,8 @@ import { Icon } from "astro-icon/components";
         <nav class="relative">
             <div class="flex flex-col justify-between items-center">
                 <button
+                    aria-expanded="false"
+                    aria-controls="btn-desplegable"
                     id="btn-menu"
                     class="p-2 px-4 rounded-md cursor-pointer bg-gray-800 text-white lg:hidden"
                 >
@@ -22,7 +24,7 @@ import { Icon } from "astro-icon/components";
             </div>
 
             <ul
-                id="lista-opciones"
+                id="btn-desplegable"
                 class="hidden absolute right-0 top-full z-20 mt-2 w-auto rounded-md bg-gray-800 p-4 text-white font-semibold text-lg shadow-lg lg:static lg:flex lg:w-auto lg:gap-12 lg:bg-transparent lg:text-2xl lg:shadow-none"
             >
                 <li class="hover:underline"><a href="/">Inicio</a></li>
@@ -37,7 +39,7 @@ import { Icon } from "astro-icon/components";
         </nav>
     </header>
 
-    <div class="p-20 md:mt-5 text-center lg:text-start">
+    <div class="p-6 pt-20 lg:p-20 md:mt-5 text-center lg:text-start">
         <p
             class="text-white font-medium text-xl md:text-2xl block leading-tight"
         >
@@ -55,17 +57,18 @@ import { Icon } from "astro-icon/components";
 <script>
     const btn = document.getElementById("btn-leer");
     const btnMenu = document.getElementById("btn-menu");
-    const opciones = document.getElementById("lista-opciones");
+    const opciones = document.getElementById("btn-desplegable");
 
-    if (btn) {
-        btn.addEventListener("click", () => {
-            alert("Accion ejecutada");
-        });
-    }
+    btn?.addEventListener("click", () => {
+        alert("Accion ejecutada");
+    });
 
-    if (btnMenu) {
-        btnMenu.addEventListener("click", () => {
-            opciones?.classList.toggle("hidden");
-        });
-    }
+    btnMenu?.addEventListener("click", function () {
+        const estaExpandido = btnMenu.getAttribute("aria-expanded") === "true";
+        const nuevoEstado = !estaExpandido;
+
+        btnMenu.setAttribute("aria-expanded", nuevoEstado ? "true" : "false");
+
+        opciones?.classList.toggle("hidden", estaExpandido);
+    });
 </script>
